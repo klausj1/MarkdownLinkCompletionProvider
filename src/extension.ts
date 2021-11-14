@@ -38,7 +38,7 @@ export function activate(context: vscode.ExtensionContext) {
 					// read document
 					const document = editor.document;
 					let text = document.getText();
-					let lines = text.split('\r\n');
+					let lines = text.replace('/\r\n/g','\n').split('\n');
 
 					// read headers
 					var headers = new Array();
