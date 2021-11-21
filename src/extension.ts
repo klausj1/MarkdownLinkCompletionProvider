@@ -84,21 +84,28 @@ function isHeader(line: string) {
 // Converts header to link, see https://docs.gitlab.com/ee/user/markdown.html#header-ids-and-links
 // Duplicate headers are not handled!
 function convertHeader2Link(header: string): string {
-	// ToDo Check https://docs.gitlab.com/ee/user/markdown.html#header-ids-and-links, remove special characters, ...
 	let link = header;
-	link = replaceAll(link,'#',''); // ToDo: Bug, should only remove all # until the first different character
+	link = replaceLeadingHashes(link);
 	link = link.trim();
 	link = link.toLowerCase();
-	link = replaceAll(link,' ', '-');
+	link = escapeRegExp(link);
+	link = replaceSpaces(link);
 	return link;
 }
 
-function replaceAll(str: string, find: string, replace: string) {
-	return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);
+function replaceLeadingHashes(str: string) {
+	str = str.replace(/^#* /g, '');
+	return str;
   }
 
+function replaceSpaces(str: string) {
+	str = str.replace(/ /g, '-');
+	str = str.replace(/--+/g, '-');
+	return str;
+}
+
 function escapeRegExp(str:string) {
-  return str.replace(/[.*+\-?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+	return str.replace(/[.*+\-?^${}()\/|[\]\\]/g, '');
 }
 
 // this method is called when your extension is deactivated
