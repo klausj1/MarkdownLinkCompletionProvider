@@ -78,8 +78,9 @@ function convertHeader2Link(header: string): string {
   link = link.replace(/^#* /g, ''); // Remove leading hashes ('#')
   link = link.trim();
   link = link.toLowerCase();
-  link = link.replace(/[.*+\-?^${}():\/|[\]\\]/g, ''); // Remove special characters
-  link = replaceSpaces(link); // replace spaces wit '-', and multiple '-' with one '-'
+  //link = link.replace(/[.*+\-?^${}():\/|[\]\\]/g, ''); // Remove special characters
+  link = link.replace(/[!#$%&'()*+,.\/:;<=>?@[\\\]^`{|}]/g, ''); // Remove special characters
+  link = replaceSpaces(link); // replace spaces with '-', and multiple '-' with one '-'
   return link;
 }
 

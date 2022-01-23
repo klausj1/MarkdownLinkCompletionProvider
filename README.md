@@ -19,4 +19,4 @@ Known issues:
 
 Note: I was very surprised that I did not find a working extension with this functionality. If there is a better one than this, please give me a hint.
 
-Installation: You can build the extension on your own, or you can use the file markdownlinkcompletionprovider-0.1.0.vsix from this repository.
+Installation: Via VSCode Marketplace
