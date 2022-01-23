@@ -2,7 +2,7 @@
 	"name": "markdownlinkcompletionprovider",
 	"displayName": "Markdown Link Completion Provider",
 	"description": "Provides completion for markdown links",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"engines": {
 		"vscode": "^1.59.0"
 	},
@@ -35,9 +35,9 @@
 		"vscode-test": "^1.5.2"
 	},
 	"publisher": "KlausJandl",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/klausj1/MarkdownLinkCompletionProvider.git"
-      },
-      "homepage": "https://github.com/klausj1/MarkdownLinkCompletionProvider/blob/main/README.md"
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/klausj1/MarkdownLinkCompletionProvider.git"
+	},
+	"homepage": "https://github.com/klausj1/MarkdownLinkCompletionProvider/blob/main/README.md"
 }
